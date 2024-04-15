@@ -1,0 +1,54 @@
+.Form3 {
+  width: 621px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  .form-values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    gap: auto;
+
+    .form-section {
+      width: 30%;
+      // flex: 1;
+    }
+
+    .form-entry {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      justify-content: center;
+      align-items: flex-start;
+      // gap: 10px;
+
+
+      p {
+        font-size: 20px;
+        color: #87AC5F;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+
+    .form-key {
+      font-size: 16px;
+      color: green;
+      margin-bottom: 5px;
+
+    }
+
+    .form-value {
+      font-size: 18px;
+      color: white;
+    }
+  }
+
+}

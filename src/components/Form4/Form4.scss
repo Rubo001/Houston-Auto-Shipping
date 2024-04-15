@@ -1,0 +1,74 @@
+.Form4 {
+  width: 621px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    font-size: 18px;
+  }
+
+  .label-content {
+    .error-message {
+      color: red;
+    }
+  }
+
+  .label-content2 {
+    .error-message2 {
+      color: red;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .quote-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .last {
+      align-self: center;
+    }
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+
+    input {
+      height: 38px;
+      outline: none;
+    }
+
+    label {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+
+    .error-message {
+      color: red;
+      position: absolute;
+
+      &.error-with-label {
+        top: 68px;
+      }
+
+      &.error-without-label {
+        top: 39px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,93 @@
+.HeaderBG {
+  position: relative;
+
+  .header-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .top-panel {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      color: white;
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        transition: 300ms;
+
+        &>li:hover {
+          color: rgb(62, 173, 62);
+        }
+
+      }
+
+      p {
+        transition: 300ms;
+
+        &:hover {
+          color: rgba(62, 173, 62, 0.76);
+        }
+      }
+
+      i {
+        color: rgb(62, 173, 62);
+      }
+    }
+
+
+
+    header {
+      padding-top: 14px;
+      width: 100%;
+
+      &.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+        background-color: #ffffff;
+        color: black;
+        transition: 300ms;
+      }
+
+      img {
+        width: 130px;
+        height: 131px;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+
+      nav {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        transition: 200ms;
+
+        &>li:hover {
+          color: rgb(62, 173, 62);
+        }
+      }
+
+      p {
+        padding: 5px 15px;
+        background-color: rgb(62, 173, 62);
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.rating-summary-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.rating-summary-star,
+.rating-summary-count {
+  margin-right: 10px;
+}
+
+.rating-summary-bar {
+  content: "";
+  width: 100px;
+  height: 2px;
+  background-color: #ffc107;
+  opacity: 0.7;
+  border-radius: 1px;
+}

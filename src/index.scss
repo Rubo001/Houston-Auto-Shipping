@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    body {
+        height: 2000px;
+        font-family: monospace;
+    }
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+ol,
+ul {
+    list-style: none;
+}
