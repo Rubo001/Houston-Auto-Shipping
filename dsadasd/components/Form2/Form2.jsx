@@ -46,8 +46,7 @@ export default function Form2({ prevStep, nextStep, data }) {
       .max(10, "maximum 10 characters")
       .required()
       .transform(value => value.trim())
-      .matches(/^[a-zA-Z0-9\s]+$/, 'symbols not allowed'),
-
+      .matches(/^[a-zA-Z\s]+$/, 'Only letters and spaces are allowed'),
     operable: string().required(),
     shipping: string().required(),
   });
