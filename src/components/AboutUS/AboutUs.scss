@@ -1,0 +1,121 @@
+.AboutUs {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #F4F7FB;
+        padding: 20px;
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24px;
+            color: #87AC5F;
+        }
+
+        h4 {
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 500;
+            color: #072765;
+        }
+
+        h5 {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #072765;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #072765;
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #072765;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: disc;
+            padding-left: 20px;
+
+            li {
+                color: #072765;
+                font-weight: 400;
+                line-height: 24px;
+
+                span {
+                    color: #87AC5F;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+@media screen and (max-width: 991px) {
+    .AboutUs {
+        &__Image {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .AboutUs {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .AboutUs {
+        &__content {
+            h3 {
+                font-size: 16px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+
+            h5 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            ul {
+                li {
+                    font-size: 14px;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -47,7 +47,7 @@ export default function Form2({ prevStep, nextStep, data }) {
       .required()
       .transform(value => value.trim())
       .matches(/^[a-zA-Z0-9\s]+$/, 'symbols not allowed'),
-
+    time: string().notOneOf(["select"], "Please select a time").required(),
     operable: string().required(),
     shipping: string().required(),
   });
@@ -83,17 +83,20 @@ export default function Form2({ prevStep, nextStep, data }) {
           </div>
 
           <div className="Form2__bottom">
-            <label htmlFor="time">
-              Time
-              <Field as="select" name="time" id="time" defaultValue="select" >
-                <option value="select" disabled>Select Time</option>
-                {
-                  optionValues.map(elem => {
-                    return <option key={elem.id} value={elem.name}>{elem.name}</option>
-                  })
-                }
-              </Field>
-            </label>
+            <div className="time">
+              <label htmlFor="time">
+                Time
+                <Field as="select" name="time" id="time" defaultValue="select" required>
+                  <option value="select" disabled>Select Time</option>
+                  {
+                    optionValues.map(elem => {
+                      return <option key={elem.id} value={elem.name}>{elem.name}</option>
+                    })
+                  }
+                </Field>
+                <ErrorMessage name="time" component="div" className="error-message" />
+              </label>
+            </div>
 
             <div className="shipping">
               <label htmlFor="shipping">Shipping Method?</label>

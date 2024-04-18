@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './BurgerMenu.scss'
 
 export default function BurgerMenu() {
@@ -7,6 +7,8 @@ export default function BurgerMenu() {
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
   const [menu_class, setMenuClass] = useState("menu hidden")
   const [isMenuClicked, setIsMenuClicked] = useState(false)
+
+
 
   // toggle burger menu change
   const updateMenu = () => {
@@ -20,6 +22,31 @@ export default function BurgerMenu() {
     }
     setIsMenuClicked(!isMenuClicked)
   }
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      const menu = document.querySelector('.menu');
+      const menuIcon = document.querySelector('.burger-menu');
+      const burgerBars = document.querySelectorAll('.burger-bar');
+
+    
+      if (
+        !menu.contains(e.target) &&
+        isMenuClicked &&
+        e.target !== menuIcon &&
+        !Array.from(burgerBars).some(bar => bar.contains(e.target))
+      ) {
+        updateMenu();
+      }
+    };
+
+    window.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('click', handleClick);
+    };
+  }, [isMenuClicked]);
+
 
   return (
     <div className="BurgerMenu">

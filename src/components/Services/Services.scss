@@ -1,0 +1,90 @@
+.Services {
+  display: grid;
+  grid-template-columns: 5.57fr 4.8fr 3.53fr;
+  margin-top: 20px;
+  gap: 20px;
+
+  h3 {
+    grid-column: span 3;
+    text-align: center;
+    font-size: 25px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #001D4A;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    background-color:#F4F7FB;
+    padding: 20px;
+    gap: 20px;
+
+    h3 {
+      text-align: left;
+      padding-left: 10px;
+      color: #87Ac5F;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    h2 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 24px;
+      color: #072765;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #072765;
+
+      span {
+        color: #87Ac5F;
+      }
+    }
+  }
+
+  &__middle {
+    img {
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  &__right {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .Services {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__left {
+      width: 100%;
+    }
+
+    &__middle {
+      width: 100%;
+    }
+
+    &__right {
+      display: none;
+    }
+  }
+}
