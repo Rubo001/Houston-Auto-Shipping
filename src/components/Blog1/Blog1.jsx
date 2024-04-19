@@ -6,14 +6,14 @@ export default function Blog1() {
     {
       id: 1,
       title: 'Open Car Transport',
-      description: 'The most popular method of auto',
+      description: 'The most popular method of auto transport is Open Car Moving.',
       read: 'Read More',
       img: '/car1.png'
     },
     {
       id: 2,
       title: 'Enclosed Car Transport',
-      description: 'Enclosed car shipping is reserved for exotic or luxury automobiles.',
+      description: 'Enclosed car shipping is reserved for exotic or luxury automobiles.Enclosed car shipping is reserved for exotic or luxury automobiles.Enclosed car shipping is reserved for exotic or luxury automobiles.',
       read: 'Read More',
       img: '/car2.png'
     },

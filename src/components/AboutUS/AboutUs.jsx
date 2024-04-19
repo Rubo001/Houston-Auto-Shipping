@@ -35,8 +35,8 @@ export default function AboutUs() {
 
   return (
     <>
-      <div className="AboutUs padding-m">
-        <div className="AboutUs__content">
+      <div className="Info padding-m">
+        <div className="Info__content">
           <h3>About US</h3>
           <h4>Welcome to Houston Auto Shipping</h4>
           <h5>Your Number One Choice for Shipping Your Vehicle</h5>
@@ -45,20 +45,19 @@ export default function AboutUs() {
           </p>
 
         </div>
-        <div className="AboutUs__Image">
-          <img src="/AboutUS.png" />
+        <div className="Info__Image">
+          <img src="/aboutUS.png" />
         </div>
       </div>
 
-      <div className="AboutUs padding-m">
-        <div className="AboutUs__Image">
+      <div className="Info padding-m">
+        <div className="Info__Image">
           <img src="/Chilie.png" />
         </div>
 
-        <div className="AboutUs__content">
+        <div className="Info__content">
           <h3>Houston Auto Shipping</h3>
           <h4>What Makes Houston Auto Shipping Different</h4>
-          <h5>Your Number One Choice for Shipping Your Vehicle</h5>
           <ul>
             {
               list.map(elem => {
@@ -66,6 +65,8 @@ export default function AboutUs() {
               })
             }
           </ul>
+          <a href="#">Read More <span>&#xF285;</span></a>
+
         </div>
       </div>
     </>

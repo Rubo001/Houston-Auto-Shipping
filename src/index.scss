@@ -4,11 +4,13 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
 
 :root {
     body {
-        height: 2000px;
-        font-family: "Ubuntu";
+    font-family: "Ubuntu";
     }
 }
 

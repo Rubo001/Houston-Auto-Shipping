@@ -1,12 +1,29 @@
 .padding-m {
     padding-right: 18.2%;
     padding-left: 18.2%;
+
     @media screen and (max-width: 1536px) {
         padding-right: 6%;
         padding-left: 6%;
     }
+
     @media screen and (max-width: 768px) {
         padding-right: 16px;
         padding-left: 16px;
+    }
+}
+
+.App {
+    position: relative;
+
+    .toTop {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        font-family: 'Bootstrap-icons';
+        color: green;
+        font-size: 40px;
+        z-index: 99;
+        text-decoration: none;
     }
 }

@@ -1,4 +1,4 @@
-.AboutUs {
+.Info {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -66,13 +66,46 @@
             }
         }
 
+        a {
+            color: #87AC5F;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 15px;
+
+            span {
+                color: #87AC5F;
+                font-weight: 700;
+                font-family: 'Bootstrap-icons';
+            }
+        }
+
+    }
+
+    &__Image {
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Info {
+        &__Image {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
     }
 }
 
 
-
 @media screen and (max-width: 991px) {
-    .AboutUs {
+    .Info {
         &__Image {
             display: none;
         }
@@ -81,7 +114,7 @@
 
 
 @media screen and (max-width: 768px) {
-    .AboutUs {
+    .Info {
         width: 90%;
         margin: 20px auto;
     }
@@ -89,7 +122,7 @@
 
 
 @media screen and (max-width: 450px) {
-    .AboutUs {
+    .Info {
         &__content {
             h3 {
                 font-size: 16px;
