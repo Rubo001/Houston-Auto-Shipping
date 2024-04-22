@@ -97,14 +97,14 @@ export default function Questions() {
         }
       </div>
       <div className="Questions__right">
-        <ul>
+      <ul>
           {
             ulInfo.map(info => (
-              <li key={info.id}>
+              <li onClick={() => handleQuestionClick(info.id)} key={info.id}>
                 <img src="/square.svg" />{info.title}
                 <span
-                  className={selectedQuestion === info.id ? 'open' : ''}
-                  onClick={() => handleQuestionClick(info.id)}> &#xF282;
+                  className={selectedQuestion === info.id ? 'open' : ''}>
+                  &#xF282;
                 </span>
 
                 <ul className={`answers ${selectedQuestion === info.id ? 'open' : ''}`}>
