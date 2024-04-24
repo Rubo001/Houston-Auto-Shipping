@@ -53,11 +53,6 @@ export default function Articles() {
         <BlogCard data={blogPosts[2]} />
         <BlogCard data={blogPosts[3]} />
       </div>
-
-
     </div>
-
-
   )
 }
-

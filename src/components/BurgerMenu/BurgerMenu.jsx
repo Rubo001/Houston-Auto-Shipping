@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import './BurgerMenu.scss'
 
-export default function BurgerMenu() {
+export default function BurgerMenu({ menuLinks }) {
 
   // to change burger classes
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked")
   const [menu_class, setMenuClass] = useState("menu hidden")
   const [isMenuClicked, setIsMenuClicked] = useState(false)
-
 
 
   // toggle burger menu change
@@ -29,7 +28,7 @@ export default function BurgerMenu() {
       const menuIcon = document.querySelector('.burger-menu');
       const burgerBars = document.querySelectorAll('.burger-bar');
 
-    
+
       if (
         !menu.contains(e.target) &&
         isMenuClicked &&
@@ -66,13 +65,21 @@ export default function BurgerMenu() {
           <img src="/Logo.png" />
           <span onClick={updateMenu}>&#10005;</span>
         </a>
-        <ul>
-          <li>Home</li>
-          <li>Free Quote</li>
-          <li>About US  <i className="bi bi-chevron-down"></i></li>
-          <li>Why Choose Our Services<i className="bi bi-chevron-down"></i></li>
-          <li>Services <i className="bi bi-chevron-down"></i></li>
-          <li>Useful Tips <i className="bi bi-chevron-down"></i></li>
+        <ul className="bLinks">
+          {
+            menuLinks.map(link => {
+              return <li key={link.id}>
+                {link.title}
+                <ul className='bSublinks'>
+                  {
+                    link.submenu.map((sub, index) => {
+                      return <li key={index}>{sub}</li>
+                    })
+                  }
+                </ul>
+              </li>
+            })
+          }
         </ul>
       </div>
     </div>

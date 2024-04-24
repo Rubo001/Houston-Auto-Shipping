@@ -25,7 +25,6 @@
         &>li:hover {
           color: rgb(62, 173, 62);
         }
-
       }
 
       p {
@@ -71,34 +70,81 @@
       color: white;
 
       nav {
-        display: flex;
-        flex-direction: row;
-        gap: 25px;
-        transition: 200ms;
+        .menu {
+          display: flex;
+          gap: 25px;
+          transition: 200ms;
+          position: relative;
 
-        &>li:hover {
-          color: rgb(62, 173, 62);
+          li {
+            cursor: pointer;
+          }
+
+          .submenu {
+            width: 200px;
+            position: absolute;
+            background-color: white;
+            color: green;
+            opacity: 0;
+            visibility: hidden;
+            transition: 200ms;
+            top: 30px;
+            z-index: 1;
+
+            &.opened {
+              opacity: 1;
+              visibility: visible;
+            }
+
+            li {
+              padding: 10px 15px;
+              transition: 200ms;
+
+              &:hover {
+                background-color: rgb(220, 255, 226);
+                padding-left: 25px;
+              }
+            }
+          }
+
+
         }
       }
 
-      p {
-        padding: 5px 15px;
-        background-color: rgb(62, 173, 62);
+      .search {
+        position: relative;
 
-        i {
-          font-size: 20px;
+        p {
+          padding: 5px 15px;
+          background-color: rgb(62, 173, 62);
+          cursor: pointer;
+
+          i {
+            font-size: 20px;
+          }
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          font-size: 18px;
+          padding: 5px;
+          top: 40px;
+          right: 0;
+
+          &.open {
+            opacity: 1;
+            visibility: visible;
+          }
         }
       }
-
     }
   }
 
   .burger-icon {
     display: none;
   }
-
-
-
 
   @media screen and (max-width: 991px) {
     .burger-icon {

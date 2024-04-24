@@ -1,17 +1,72 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './Header.scss'
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 
 export default function Header() {
+
+  const menu = [
+    {
+      id: 1,
+      title: <>Home</>,
+      submenu: [],
+    },
+    {
+      id: 2,
+      title: <>FREE Quote</>,
+      submenu: [],
+    },
+    {
+      id: 3,
+      title: <>About Us <i className="bi bi-chevron-down"></i></>,
+      submenu: ['Our History', 'Our Headquarters', 'Contact Info'],
+    },
+    {
+      id: 4,
+      title: <>Why Choose Our Services <i className="bi bi-chevron-down"></i></>,
+      submenu: ['Reason 1', 'Reason 2', 'Reason 3', 'Reason 4'],
+    },
+    {
+      id: 5,
+      title: <>Services <i className="bi bi-chevron-down"></i></>,
+      submenu: ['Services 1', 'Services 2', 'Services 3', 'Services 4'],
+    },
+    {
+      id: 6,
+      title: <>Useful Tips <i className="bi bi-chevron-down"></i></>,
+      submenu: ['Tip 1', 'Tip 2', 'Tip 3', 'Tip 4'],
+    }
+  ]
+
   const [sticky, setSticky] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const [openSubMenuId, setOpenSubMenuId] = useState(null);
+
+
+  const toggleSubMenu = (id) => {
+    setOpenSubMenuId(openSubMenuId === id ? null : id);
+    setSearchOpen(false); // Close search input when opening submenu
+  };
+
+  const menuRef = useRef(null);
+
+
 
   useEffect(() => {
     window.addEventListener('scroll', isSticky);
+    document.addEventListener('click', handleClickOutside);
     return () => {
       window.removeEventListener('scroll', isSticky);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setOpenSubMenuId(null);
+    }
+  };
 
   const isSticky = () => {
     const scrollTop = window.scrollY;
@@ -20,7 +75,7 @@ export default function Header() {
 
   return (
     <>
-      <BurgerMenu />   {/*michev media-i tivy hasnely display: none;*/}
+      <BurgerMenu menuLinks={menu} />   {/*michev media-i tivy hasnely display: none;*/}
 
       <div className='header-container padding-m'>  {/* media-i tivy hasneluc heto display: none;*/}
         <div className="top-panel">
@@ -31,22 +86,31 @@ export default function Header() {
             <span>FAQs</span>
             <span>Contact Us</span>
           </nav>
-          <p> <i className="bi bi-envelope-fill"></i>  info@autoshippinghouston.com</p>
+          <p> <i className="bi bi-envelope-fill"></i> info@autoshippinghouston.com</p>
         </div>
 
         <header className={`${sticky ? 'is-sticky padding-m' : ''}`}>
           <a href="#">
             <img src="/Logo.png" />
           </a>
-          <nav>
-            <span>Home</span>
-            <span>Free Quote</span>
-            <span>About US  <i className="bi bi-chevron-down"></i></span>
-            <span>Why Choose Our Services<i className="bi bi-chevron-down"></i></span>
-            <span>Services <i className="bi bi-chevron-down"></i></span>
-            <span>Useful Tips <i className="bi bi-chevron-down"></i></span>
+          <nav ref={menuRef}>
+            <ul className='menu'>
+              {menu.map(link => (
+                <li key={link.id} onClick={() => toggleSubMenu(link.id)}>
+                  {link.title}
+                  <ul className={`${openSubMenuId === link.id ? 'opened' : ''} submenu`}>
+                    {link.submenu.map((sub, index) => (
+                      <li key={index}>{sub}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
           </nav>
-          <p><i className="bi bi-search"></i></p>
+          <div className='search'>
+            <p onClick={() => setSearchOpen(!searchOpen)}><i className="bi bi-search"></i></p>
+            <input className={searchOpen ? 'open' : ''} placeholder='Search...' type="search" name="search" id="search" />
+          </div>
         </header>
       </div>
     </>

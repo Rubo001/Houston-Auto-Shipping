@@ -75,18 +75,44 @@
     gap: 20px;
 
 
-    ul {
+    .bLinks {
       display: flex;
       flex-direction: column;
       gap: 20px;
       transition: 300ms;
 
-
       li {
+        position: relative;
         padding: 5px;
         font-size: 20px;
         border-bottom: 1px solid gray;
         transition: 200ms;
+
+        &:hover .bSublinks {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .bSublinks {
+          width: 90%;
+          background-color: rgb(247, 247, 247);
+          position: absolute;
+          top: 35px;
+          left: 10px;
+          z-index: 1;
+          opacity: 0;
+          visibility: hidden;
+
+          li {
+            padding: 10px 15px;
+            transition: 200ms;
+
+            &:hover {
+              background-color: rgb(233, 255, 238);
+              padding-left: 25px;
+            }
+          }
+        }
 
       }
     }

@@ -1,0 +1,43 @@
+.NewPage {
+    .HeaderBG {
+        .top-panel {
+            color: #072765;
+            cursor: pointer;
+        }
+        header {
+            &.is-sticky {
+                color: #072765;
+            }
+            nav {
+                .menu {
+                    li { 
+               color: #072765;
+                    }
+                }
+            }
+            .search {
+                p {
+                    i {
+                        font-size: 20px;
+                    }
+                }
+                input {
+                    outline: none;
+                }
+            }
+        }
+
+        //     @media screen and (max-width: 991px) {
+        //         .burger-icon {
+        //             display: block;
+        //         }
+
+        //         .header-container {
+        //             display: none;
+        //         }
+        //     }
+        // }
+
+
+    }
+}
