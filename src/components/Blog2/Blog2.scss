@@ -5,14 +5,11 @@
 
   &__cards {
     padding-top: 200px;
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     column-gap: 30px;
     row-gap: 30px;
-    
 
     &>div {
       width: 23%;
@@ -24,22 +21,43 @@
     gap: 20px;
     justify-content: center;
 
-    button {
-      width: 30px;
-      height: 30px;
+    .next-prev {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color:black;
+      cursor: pointer;
+      border: 3px solid;
+      padding: 0.25em 0.5em;
+      box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      border-radius: 0;
+
     }
+
+    button {
+      padding: 10px 15px;
+      border-radius: 50%;
+      background-color: white;
+      color: black;
+      outline: none;
+
+      &.active {
+        background-color: #87AC5F;
+        color: white;
+        
+      }
+
+      &:disabled {
+        display: none;
+      }
+    }
+
+
   }
 }
-
-
-// @media screen and (max-width: 991px) {
-//   .Blog2 {
-//     grid-template-columns: repeat(2, 1fr);
-//   }
-// }
-
-// @media screen and (max-width: 450px) {
-//   .Blog2 {
-//     grid-template-columns: 1fr;
-//   }
-// }

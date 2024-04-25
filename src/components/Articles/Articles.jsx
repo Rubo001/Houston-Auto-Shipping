@@ -1,3 +1,4 @@
+import ROUTES from '../../routes';
 import BlogCard from '../BlogCard/BlogCard';
 import './Articles.scss'
 
@@ -10,6 +11,7 @@ export default function Articles() {
       category: 'Blogs',
       title: 'Ford Lightning is an incredible EV Truck that’ll debut',
       description: 'Ford has been upping their game when it comes to electric vehicles. This all has to do with the evolution of the climate,This all has to do with the evolution of the climate',
+      route: ROUTES.BLOG
     },
     {
       id: 2,
@@ -18,6 +20,7 @@ export default function Articles() {
       category: 'Blogs',
       title: 'Winter Car Transport Tips',
       description: 'When the weather gets colder, most people want nothing more than to hunker down and wait it out.When the weather gets colder, most people want nothing more than to hunker down and wait it out. ',
+      route: ROUTES.BLOG
     },
     {
       id: 3,
@@ -26,6 +29,7 @@ export default function Articles() {
       category: 'News',
       title: 'School Improvement Bills Filed For Safety, Funding and Teachers',
       description: 'Texas is making new laws—six in specific—to improve the schools around the Lone Star state. Texas is making new laws—six in specific—to improve the schools around the Lone Star state. ',
+      route: ROUTES.NEWS
     },
     {
       id: 4,
@@ -34,6 +38,7 @@ export default function Articles() {
       category: 'News',
       title: 'Plane Makes Emergency Landing on Grand Parkway',
       description: 'Every pilot’s worst nightmare is needing to make an emergency landing. Every pilot’s worst nightmare is needing to make an emergency landing. Any mechanical failure can put their lives in',
+      route: ROUTES.NEWS
     }
   ];
 

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './Header.scss'
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import { Link, NavLink } from 'react-router-dom';
+import ROUTES from '../../routes';
 
 
 export default function Header() {
@@ -81,18 +83,19 @@ export default function Header() {
         <div className="top-panel">
           <p> <i className="bi bi-headset"></i>  (346)200-8494</p>
           <nav>
-            <span>Blog</span>
-            <span>News</span>
-            <span>FAQs</span>
-            <span>Contact Us</span>
+            <NavLink to={ROUTES.HOME}>Home</NavLink>
+            <NavLink to={ROUTES.BLOG}>Blog</NavLink>
+            <NavLink to={ROUTES.NEWS}>News</NavLink>
+            <NavLink to={ROUTES.FAQ}>FAQs</NavLink>
+            <NavLink to={ROUTES.CONTACT}>Contact Us</NavLink>
           </nav>
           <p> <i className="bi bi-envelope-fill"></i> info@autoshippinghouston.com</p>
         </div>
 
         <header className={`${sticky ? 'is-sticky padding-m' : ''}`}>
-          <a href="#">
+          <Link to={ROUTES.HOME}>
             <img src="/Logo.png" />
-          </a>
+          </Link>
           <nav ref={menuRef}>
             <ul className='menu'>
               {menu.map(link => (

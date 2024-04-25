@@ -1,7 +1,6 @@
 import './App.scss'
 import AboutUs from './components/AboutUS/AboutUs'
 import Articles from './components/Articles/Articles'
-// import Articles from './components/Articles/Articles'
 import Blog1 from './components/Blog1/Blog1'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './BlogCard.scss'
 
 export default function BlogCard({ data }) {
@@ -13,7 +14,7 @@ export default function BlogCard({ data }) {
       </div>
       <div className="BlogCard__btns">
         <a className='readMore' href="#">Read More <span>&#xF285;</span> </a>
-        <a className='viewMore' href="#">View All</a>
+        <Link className='viewMore' to={data.route}>View All</Link>
       </div>
     </div>
   )

@@ -4,11 +4,11 @@ import axios from 'axios';
 
 export default function Blog2() {
 
-  const pageCount = 3; //ejeri qanak
+  const pageCount = 7; //ejeri qanak
   const [currentPage, setCurrentPage] = useState(1); //tvyal ejy
   const [data, setData] = useState([]); //datai zangvats
 
-  //Date poxelu hamar, GPT-a arats normal cheme naye incha, bayc mi hat nayes kjoges
+  
   function formatDate(dateString) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -26,11 +26,6 @@ export default function Blog2() {
     return formattedDate;
   }
 
-  // Example usage
-  const originalDate = '2022-06-01T17:15:13.000000Z';
-  const formattedDate = formatDate(originalDate);
-  console.log(formattedDate); // Output: Jun 1, 2022
-
 
   // datayi stanal
   useEffect(() => {
@@ -43,8 +38,16 @@ export default function Blog2() {
     setCurrentPage(page);
   };
 
+  const handlePrev = (page) => {
+    setCurrentPage(page - 1)
+  }
+
+  const handleNext = (page) => {
+    setCurrentPage(page + 1)
+  }
+
   return (
-    // Componenti mejic berel enq stex senc, vortev props-i dashtery tarber ein mer stacats data-i dashteric
+    
     <div className='Blog2 padding-m'>
       <div className="Blog2__cards">
         {
@@ -68,10 +71,31 @@ export default function Blog2() {
 
       {/* Pagination knopkeq */}
       <div className="Blog2__pagination">
-        {Array.from({ length: pageCount }, (_, index) => index + 1).map(page => (
-          <button key={page} onClick={() => handlePageChange(page)}>{page}</button>
-        ))}
+        <button className='next-prev' onClick={() => handlePrev(currentPage)} disabled={currentPage === 1}>Previous</button>
+
+        {/* arajin ej */}
+        <button onClick={() => handlePageChange(1)} className={currentPage === 1 ? 'active' : ''}>{1}</button>
+
+        {/*3 ket*/}
+        {currentPage > 2 && <span>...</span>}
+
+        {/* buttonery  */}
+        {Array.from({ length: pageCount }, (_, index) => index + 1)
+          .filter(page => page > currentPage - 2 && page < currentPage + 2 && page !== 1 && page !== pageCount)
+          .map(page => (
+            <button  key={page} onClick={() => handlePageChange(page)} className={currentPage === page ? 'active' : ''}>{page}</button>
+          ))}
+
+        {/* 3 kety erp 1 ejic heruya nshvac ejy*/}
+        {currentPage < pageCount - 1 && <span>...</span>}
+
+        {/* Last page */}
+        {pageCount !== 1 && <button onClick={() => handlePageChange(pageCount)} className={currentPage === pageCount ? 'active' : ''}>{pageCount}</button>}
+
+        <button className='next-prev' onClick={() => handleNext(currentPage)} disabled={currentPage === pageCount}>Next</button>
       </div>
+
+
 
     </div >
   )
